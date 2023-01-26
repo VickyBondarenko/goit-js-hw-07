@@ -9,7 +9,7 @@ function renderList() {
         original,
         description,
       }) => `<a class="gallery__item" href="${original}">
-  <img class="gallery__image" src="${preview}" alt="${description}"  title="${description}"/>
+  <img class="gallery__image" src="${preview}" alt="${description}"  />
 </a>`
     )
     .join("");
@@ -19,6 +19,7 @@ function renderList() {
 renderList();
 
 const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
   captionDelay: 250,
   captionPosition: "bottom",
 });
